@@ -22,14 +22,14 @@
 
 namespace yasd {
 Logger::Logger(const char *_log_file) {
-    log_file = _log_file;
+    // log_file = _log_file;
 
-    log_fd = ::open(log_file.c_str(), O_APPEND | O_RDWR | O_CREAT, 0666);
-    if (log_fd < 0) {
-        printf("open(%s) failed. Error: %s[%d]\n", log_file.c_str(), strerror(errno), errno);
-        log_fd = STDOUT_FILENO;
-        log_file = "";
-    }
+    // log_fd = ::popen(log_file.c_str(), O_APPEND | O_RDWR | O_CREAT, 0666);
+    // if (log_fd < 0) {
+    //     printf("open(%s) failed. Error: %s[%d]\n", log_file.c_str(), strerror(errno), errno);
+    //     log_fd = STDOUT_FILENO;
+    //     log_file = "";
+    // }
 }
 
 Logger::~Logger() {
